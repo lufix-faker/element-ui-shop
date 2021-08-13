@@ -23,6 +23,7 @@
           :collapse="isCollapse"
           :collapse-transition="false"
           router
+          :default-active="$route.path"
         >
           <!-- 一级菜单 -->
           <el-submenu :index="item.id + ''" v-for="item in menusList" :key="item.id">
@@ -85,11 +86,10 @@ export default {
       const { data: res } = await getMenusList();
       if(res.meta.status !== 200) return this.$message.error(res.meta.msg);
       this.menusList = res.data;
-      console.log(this.menusList);
+      // console.log(this.menusList);
     },
     /* 改变左侧菜单折叠状态 */
     toggleCollapse() {
-      console.log(11);
       this.isCollapse = !this.isCollapse;
     }
   },

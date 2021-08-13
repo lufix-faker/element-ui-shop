@@ -4,3 +4,19 @@ html,body,#app {
   padding: 0;
   height: 100%;
 }
+
+/* 面包屑导航 */
+.el-breadcrumb {
+  margin-bottom: 15px;
+}
+
+/* 用户列表展示区域 */
+.el-table {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* 分页区域 */
+.el-pagination {
+  margin-top: 15px;
+}

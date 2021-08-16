@@ -134,3 +134,45 @@ export function allotRights(roleId, rids) {
   })
 }
 
+
+/* 商品管理 */
+/* 获取商品数据 */
+export function getCateList(queryInfo) {
+  return request({
+    url: '/categories',
+    params: queryInfo
+  })
+}
+
+/* 添加分类 */
+export function addCate(form) {
+  return request({
+    url: '/categories',
+    method: 'post',
+    data: form
+  })
+}
+
+/* 根据id查询分类 */
+export function getCateById(id) {
+  return request({
+    url: `/categories/${id}`
+  })
+}
+
+/* 编辑分类 */
+export function editCate(id, obj) {
+  return request({
+    url: `/categories/${id}`,
+    method: 'put',
+    data: obj
+  })
+}
+
+/* 删除分类 */
+export function removeCate(id) {
+  return request({
+    url: `/categories/${id}`,
+    method: 'delete'
+  })
+}

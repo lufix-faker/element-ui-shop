@@ -8,7 +8,7 @@ export function getMenusList() {
 }
 
 
-/* 用户管理 */
+/* 用户管理 --> 用户列表 */
 /* 获取用户列表数据 */
 export function getUsersList(queryInfo) {
   return request({
@@ -69,7 +69,7 @@ export function allotRole(id, rid) {
 }
 
 
-/* 权限管理 */
+/* 权限管理 --> 权限列表 */
 /* 获取所有权限列表 */
 export function getRightsList(type) {
   return request({
@@ -77,6 +77,8 @@ export function getRightsList(type) {
   })
 }
 
+
+/* 权限管理 --> 角色列表 */
 /* 获取所有角色列表 */
 export function getRolesList() {
   return request({
@@ -135,7 +137,7 @@ export function allotRights(roleId, rids) {
 }
 
 
-/* 商品管理 */
+/* 商品管理 --> 商品分类 */
 /* 获取商品数据 */
 export function getCateList(queryInfo) {
   return request({
@@ -173,6 +175,50 @@ export function editCate(id, obj) {
 export function removeCate(id) {
   return request({
     url: `/categories/${id}`,
+    method: 'delete'
+  })
+}
+
+
+/* 商品管理 --> 分类参数 */
+/* 获取参数属性 */
+export function getAttributes(id, params) {
+  return request({
+    url: `/categories/${id}/attributes`,
+    params: params
+  })
+}
+
+/* 增加参数、属性 */
+export function addAttribute(id, obj) {
+  return request({
+    url: `/categories/${id}/attributes`,
+    method: 'post',
+    data: obj
+  })
+}
+
+/* 根据id查询参数、属性 */
+export function getAttributesById(id, attrId, obj) {
+  return request({
+    url: `/categories/${id}/attributes/${attrId}`,
+    params: obj
+  })
+}
+
+/* 修改参数、属性 */
+export function editAttribute(id, attrId, obj) {
+  return request({
+    url: `/categories/${id}/attributes/${attrId}`,
+    method: 'put',
+    data: obj
+  })
+}
+
+/* 删除参数、属性 */
+export function removeAttribute(id, attrId) {
+  return request({
+    url: `/categories/${id}/attributes/${attrId}`,
     method: 'delete'
   })
 }

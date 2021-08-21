@@ -181,7 +181,7 @@ export function removeCate(id) {
 
 
 /* 商品管理 --> 分类参数 */
-/* 获取参数属性 */
+/* 获取参数、属性 */
 export function getAttributes(id, params) {
   return request({
     url: `/categories/${id}/attributes`,
@@ -220,5 +220,32 @@ export function removeAttribute(id, attrId) {
   return request({
     url: `/categories/${id}/attributes/${attrId}`,
     method: 'delete'
+  })
+}
+
+
+/* 商品管理 --> 商品列表 */
+/* 获取商品列表 */
+export function getGoodsList(obj) {
+  return request({
+    url: '/goods',
+    params: obj
+  })
+}
+
+/* 根据商品id删除商品 */
+export function removeGoodById(id) {
+  return request({
+    url: `/goods/${id}`,
+    method: 'delete'
+  })
+}
+
+/* 添加商品 */
+export function addGoods(form) {
+  return request({
+    url: '/goods',
+    method: 'post',
+    data: form
   })
 }

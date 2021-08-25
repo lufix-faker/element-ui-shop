@@ -249,3 +249,20 @@ export function addGoods(form) {
     data: form
   })
 }
+
+
+/* 订单管理 -> 订单列表 */
+/* 获取订单列表 */
+export function getOrdersList(queryInfo) {
+  return request({
+    url: '/orders',
+    params: queryInfo
+  })
+}
+
+/* 查询物流进度 */
+export function getProgress(id) {
+  return request({
+    url: `/kuaidi/${id}`
+  })
+}

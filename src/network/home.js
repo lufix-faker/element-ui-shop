@@ -266,3 +266,12 @@ export function getProgress(id) {
     url: `/kuaidi/${id}`
   })
 }
+
+
+/* 数据统计 -> 数据报表 */
+/* 获取报表数据 */
+export function getReportData() {
+  return request({
+    url: '/reports/type/1'
+  })
+}
